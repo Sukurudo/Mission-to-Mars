@@ -1,6 +1,23 @@
 ﻿
 <!DOCTYPE html>
 <html lang="en">
+
+<style type="text/css">
+        html, body {
+            margin: 0;
+            border: 0;
+            width: 100%;
+        }
+    
+        body {
+            padding: 0 20px;
+        }
+    
+        #main {
+            margin: 0 auto; /* in case you want to set a fixed width on this as well */
+        }
+</style>
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,12 +26,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
 <body>
+    <div id ="main">
     <!--Mars News-->
     <div class="contain">
         <div class="jumbotron text-center">
             <h1>Mission to Mars</h1>
-            <h2> Last Updated: {{mars.last_modified}}</h2>
-            <p><a class="btn btn-outline-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+            <h4> Last Updated: {{mars.last_modified}}</h4>
+            <p><a class="btn btn-danger btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
         </div>
     </div>
     <div class="row" id="mars-news">
@@ -68,6 +86,6 @@
             <img src="{{ mars_images.Valles_Marineris | default('static/images/error.png', true) }}" class="img-responsive" alt="Valles Marineris Hemisphere Enhanced Image" />
         </div>
     </div>
-    
+</div>
 </body>
 </html>
